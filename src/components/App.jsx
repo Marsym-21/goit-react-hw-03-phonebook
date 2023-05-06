@@ -15,7 +15,9 @@ export class App extends React.Component {
 
   componentDidMount() {
     const localStoradgeData = JSON.parse(localStorage.getItem('contacts'));
-    this.setState({ contacts: localStoradgeData });
+    if (localStoradgeData) {
+      this.setState({ contacts: localStoradgeData });
+    }
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -75,7 +77,7 @@ export class App extends React.Component {
   }
   onPropTypes = {
     onSubmit: PropTypes.func.isRequired,
-    contacts: PropTypes.array.isRequired,
+    contacts: PropTypes.arrayOf(PropTypes.object).isRequired,
     value: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
     filter: PropTypes.string.isRequired,
