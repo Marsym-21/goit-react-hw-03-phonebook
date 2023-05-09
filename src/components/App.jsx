@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Phonebook from './Phonebook';
 import Contacts from './Contacts';
 import Filter from './Filter';
@@ -75,12 +74,5 @@ export class App extends React.Component {
       </div>
     );
   }
-  onPropTypes = {
-    onSubmit: PropTypes.func.isRequired,
-    contacts: PropTypes.arrayOf(PropTypes.object).isRequired,
-    value: PropTypes.string.isRequired,
-    onChange: PropTypes.func.isRequired,
-    filter: PropTypes.string.isRequired,
-    onClick: PropTypes.func.isRequired,
-  };
+
 }
